@@ -1,13 +1,28 @@
-// TODO: JavaDoc
+/**
+ * Represents a Currency.
+ * This class defines a Currency-object which represents the kurs
+ * and the name aswell as the symbol of the currency.
+ * @author John Wick
+ */
 public class Waehrung {
 
-    // TODO: JavaDoc
+    /**
+     * Der Kurs der Währung.
+     * (the variable is a constant and represents
+     * the kurs of our currency)
+     */
     private final int kurs;
 
-    // TODO: JavaDoc
+    /**
+     * Name der Währung.
+     */
     private final String name;
 
-    // TODO: JavaDoc
+    /**
+     * Währungssymbol
+     * 
+     * (The String variable kuerzel represents the symbol of the currency and cannot be changed.)
+     */
     private final String kuerzel;
 
     // TODO: JavaDoc
@@ -26,7 +41,12 @@ public class Waehrung {
         this.kuerzel = kuerzel;
     }
 
-    // TODO: JavaDoc
+    /**
+     *
+     * @param betrag der Betrag, der umgerechnet werden soll
+     * @param toWaehrung
+     * @return
+     */
     public long umrechnen(long betrag, Waehrung toWaehrung) {
         return betrag * kurs / toWaehrung.kurs;
     }
@@ -35,8 +55,11 @@ public class Waehrung {
     public int getKurs() {
         return kurs;
     }
-    
-    // TODO: JavaDoc
+
+    /**
+     *
+     * @return
+     */
     public String getName() {
         return name;
     }
