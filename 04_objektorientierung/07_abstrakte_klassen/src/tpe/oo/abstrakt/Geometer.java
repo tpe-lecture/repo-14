@@ -16,8 +16,8 @@ public final class Geometer {
      * @param args Kommandozeilenargumente
      */
     public static void main(String[] args) {
-        Kreis[] kreise = new Kreis[5];
-        Dreieck[] dreiecke = new Dreieck[5];
+        Figur[] kreise = new Kreis[5];
+        Figur[] dreiecke = new Dreieck[5];
         
         kreise[0] = new Kreis(10.0);
         kreise[1] = new Kreis(5.5);
@@ -33,11 +33,11 @@ public final class Geometer {
         
         double gesamtflaeche = 0.0;
 
-        for (Kreis kreis : kreise) {
+        for (Figur kreis : kreise) {
             gesamtflaeche += kreis.flaeche();
         }
 
-        for (Dreieck dreieck : dreiecke) {
+        for (Figur dreieck : dreiecke) {
             gesamtflaeche += dreieck.flaeche();
         }
         
