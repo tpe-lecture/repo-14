@@ -6,7 +6,7 @@ import de.smits_net.games.framework.image.AnimatedImage;
 /**
  * Zauberer.
  */
-public class Wizard extends Figur {
+/*public*/ class Wizard extends Figur {
     
     /**
      * Neuer Figur anlegen.
