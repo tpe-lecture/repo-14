@@ -43,8 +43,8 @@ public final class ZooSimulation {
         for (ZooTier tier : tiere) {
             System.out.println(tier);
         }
-        
-        
+
+
 
         // System.out.println(charlie);
         // System.out.println(buck);
@@ -58,7 +58,7 @@ public final class ZooSimulation {
 
         // System.out.println(charlie);
         // System.out.println(buck
-        );
+
         // System.out.println(debbie);
     }
 }
