@@ -9,7 +9,7 @@ public class Kapitalgesellschaft extends Unternehmen {
     }
 
     @Override
-    public double steuer() {
+    public int steuer() {
         // TODO Auto-generated method stub
         return 0;
     }

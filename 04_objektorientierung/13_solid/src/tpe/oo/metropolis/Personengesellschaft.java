@@ -3,13 +3,13 @@ package tpe.oo.metropolis;
 public class Personengesellschaft extends Unternehmen implements Einkommensteuerpflichtig{
 
     @Override
-    public double steuer() {
+    public int steuer() {
         // TODO Auto-generated method stub
         return 0;
     }
 
     @Override
-    public double einkommensteuer() {
+    public int einkommensteuer() {
         // TODO Auto-generated method stub
         return 0;
     }

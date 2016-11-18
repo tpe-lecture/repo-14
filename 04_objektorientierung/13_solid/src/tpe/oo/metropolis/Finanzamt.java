@@ -2,7 +2,7 @@ package tpe.oo.metropolis;
 
 public class Finanzamt {
 
-    private Steuerpflichtig[] steuerpflichtig = new Steuerpflichtig[20];
+    private Steuerpflichtig[] steuerpflichtig = new Steuerpflichtig[50];
 
     // public double steuer(Steuerpflichtig f){
     // double steuerEinnahmen=0;
@@ -21,8 +21,8 @@ public class Finanzamt {
     // return steuerEinnahmen;
     // }
 
-    public double steuer() {
-        double steuerEinnahmen = 0;
+    public int steuer() {
+        int steuerEinnahmen = 0;
         for (Steuerpflichtig s : steuerpflichtig) {
             if (s != null) {
                 steuerEinnahmen = steuerEinnahmen + s.steuer();

@@ -2,19 +2,19 @@ package tpe.oo.metropolis;
 
 public class Buerger extends Mensch implements Einkommensteuerpflichtig {
 
-    protected Buerger(String name, double einkommen) {
+    protected Buerger(String name, int einkommen) {
         super(name, einkommen);
 
     }
 
     @Override
-    public double einkommensteuer() {
+    public int einkommensteuer() {
 
         return 0;
     }
 
     @Override
-    public double steuer() {
+    public int steuer() {
         // TODO Auto-generated method stub
         return 0;
     }

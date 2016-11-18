@@ -9,9 +9,10 @@ public class Syndikat implements Koerperschaftsteuerpflichtig {
         this.name = name;
     }
 
-    public double koerperschaftsteuer() {
-        double steuer = 0;
-        double summe = 0;
+    @Override
+    public int koerperschaftsteuer() {
+        int steuer = 0;
+        int summe = 0;
 
         for (Schurke s : schurken) {
             if (s != null) {
@@ -19,7 +20,7 @@ public class Syndikat implements Koerperschaftsteuerpflichtig {
                 summe = summe + s.getEinkommen();
             }
         }
-        return steuer + (summe * STEUERSATZ);
+        return (int) (steuer + (summe * STEUERSATZ));
 
     }
 
@@ -35,9 +36,10 @@ public class Syndikat implements Koerperschaftsteuerpflichtig {
             }
 
             if (schurken[position] == null) {
+                schurken[position] = schurke;
                 System.out.println(schurke.getName() + " " + "Hat sich dem "
                         + this.name + " angeschlossen");
-                schurken[position] = schurke;
+
                 return;
             }
 
@@ -48,7 +50,7 @@ public class Syndikat implements Koerperschaftsteuerpflichtig {
     }
 
     @Override
-    public double steuer() {
+    public int steuer() {
 
         return koerperschaftsteuer();
     }

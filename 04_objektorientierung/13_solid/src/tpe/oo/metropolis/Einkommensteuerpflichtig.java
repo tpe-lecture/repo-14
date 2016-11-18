@@ -5,5 +5,5 @@ public interface Einkommensteuerpflichtig extends Steuerpflichtig {
     double STEUERSATZ2=0.15;
     double STEUERSATZ3=0.25;
 
-    double einkommensteuer();
+    int einkommensteuer();
 }
