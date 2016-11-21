@@ -48,7 +48,6 @@ public class CrypterImpl implements Crypter {
 	@Override
 	public String decrypt(String input) throws IllegalArgumentException {
 
-		
 		for (int position = 0; position < input.length(); position++) {
 
 			inner: for (int position2 = 0; position2 < buchstaben.length; position2++) {
@@ -60,7 +59,7 @@ public class CrypterImpl implements Crypter {
 				if (input.charAt(position) == buchstaben[position2]) {
 					break inner;
 				}
-				if (position2 + 1 == buchstaben.length - 1) {
+				if (position2 + 1 == buchstaben.length) {
 					throw new IllegalArgumentException();
 				}
 			}
