@@ -1,6 +1,7 @@
 package tpe.generics.use;
 
 import java.awt.Color;
+import java.util.*;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Point;
@@ -19,7 +20,7 @@ import de.smits_net.games.framework.sprite.Velocity;
 public class GameBoard extends Board {
 
     /** Münzstapel. */
-    // TODO: Münzen als Stack speichern
+    Stack<Sprite> stack = new Stack<>();
 
     /** A moving coin. */
     private Sprite moving;
@@ -42,7 +43,7 @@ public class GameBoard extends Board {
 
         // Münzen anlegen
         for (int i = 0; i < 20; i++) {
-            // TODO: Neue Münzen auf den Stapel legen
+            stack.push(createCoin());
         }
     }
 
@@ -78,11 +79,14 @@ public class GameBoard extends Board {
     @Override
     public synchronized void drawGame(Graphics g) {
         // TODO: Über alle Objekte im Stapel laufen und sie zeichnen
-
+        
+        for(Sprite s:stack){
+            s.draw(g);
         if (moving != null) {
             moving.draw(g, this);
         }
 
+        }
         writeText(g, 0, 20, "Punkte: " + points);
     }
 
@@ -104,21 +108,28 @@ public class GameBoard extends Board {
      */
     @Override
     public synchronized void mouseClicked(MouseEvent e) {
-
+        Sprite s=null;
         if (startzeit == 0) {
             startzeit = System.currentTimeMillis();
         }
 
         // TODO: Wenn Stapel leer ist, nichts tun
+        if(stack.isEmpty()){
+            return;
+        }else{
+            s=stack.peek();
+        }
+
+
 
         // TODO: Oberstes Sprite vom Stapel ansehen und s zuweisen
-        Sprite s = null;
+        
 
         if (s.intersects(new Point(e.getX(), e.getY()))) {
             points++;
 
             // TODO: Oberstes Sprite vom Stapel entfernen und s zuweisen
-
+            s=stack.pop();
             moving = s;
             moving.setVelocity(new Velocity(0, 20));
         }
@@ -129,12 +140,16 @@ public class GameBoard extends Board {
      */
     @Override
     public boolean updateGame() {
-        
+
         if (moving != null) {
             moving.move();
         }
+
+        if(stack.empty()){
+            return false;
+        }else{
+            return true;
+        }
         
-        // TODO: Solange Stapel noch Elemente enthält, true zurückgeben.
-        return true;
     }
 }
