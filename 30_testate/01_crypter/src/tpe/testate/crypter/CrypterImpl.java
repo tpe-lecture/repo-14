@@ -1,11 +1,23 @@
 package tpe.testate.crypter;
 
+/**
+ * Diese Klasse implementiert das interface Crypter und dient dazu, Texte mit der
+ * speziellen TPE-Verschlüsselung zu verschlüsseln.
+ */
 public class CrypterImpl implements Crypter {
 	public char[] buchstaben = "abcdefghijklmnopqrstuvwxyz ".toCharArray();
 	public char[] zahlen = "0123456789".toCharArray();
 	public char[] crypter = "3l1o0a4t7".toCharArray();
 	public char[] crypter2 = "e1l0o4a7t".toCharArray();
 
+	/**
+	 * Verschlüsselt den gegebenen Text. Enthält die Eingabe Großbuchstaben,so
+	 * werden diese in Kleinbuchstaben umgewandelt. Ungültige Zeichen werden
+	 * ignoriert und nicht in den verschlüsselten Text Übernommen.
+	 *
+	 * @param input Text, der verschlüsselt werden soll.
+	 * @return Verschlüsselter Text.
+	 */
 	@Override
 	public String encrypt(String input) {
 		input = input.toLowerCase();
@@ -45,6 +57,14 @@ public class CrypterImpl implements Crypter {
 
 	}
 
+	/**
+	 * Entschlüsselt den gegebenen Text. Enthält die Eingabe Großbuchstaben,
+	 * oder andere ungültige Zeichen, so wirft die Methode eine Ausnahme.
+	 * @param input Text, der entschlüsselt werden soll.
+	 * @return Entschlüsselter Text.
+	 * @throws IllegalArgumentException Wird geworfen, wenn die Eingabe
+	 * ungültige Zeichen (Großbuchstaben) enthält.
+	 */
 	@Override
 	public String decrypt(String input) throws IllegalArgumentException {
 
